@@ -75,6 +75,7 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const Note = require("./models/Note");
+    console.log(req.body);
     const note = new Note(req.body);
     await note.save();
     return res.send("Note saved. <a href=''>Refresh</a>");
